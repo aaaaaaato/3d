@@ -1,0 +1,83 @@
+/*
+* @Author: Administrator
+* @Date:   2018-03-15 19:40:29
+* @Last Modified by:   Administrator
+* @Last Modified time: 2018-03-15 21:20:34
+*/
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+body{
+	background: #333;
+}
+.scene{
+	width: 500px;
+	height: 500px;
+	border: 2px solid red;
+	/* 上下方向 左右方向 */
+	margin: 100px auto;
+	/* 建立3d场景   灭点*/
+	perspective: 100px;
+	/* 确定观察者的角度 */
+	/* perspective-origin: left top; */
+}
+.scene ul{
+	width: 200px;
+	height: 200px;
+	/* background: blue; */
+	/* 四个方向 */
+	margin: 150px;
+	position: relative;
+	/* 使所有子元素可以使用3d属性 */
+	transform-style: preserve-3d;
+	transition: 2s;
+
+}
+.scene ul li{
+	width: 200px;
+	height: 200px;
+	/* background: pink; */
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: 2s;
+}
+.scene:hover .left{
+	background: deeppink;
+	/* 平移：translateX 水平方向的平移  
+	负值: 左; 正值 右移 */
+	transform: translateX(-100px) rotateY(90deg);
+	/* 阴影 */
+	box-shadow: 0 0 15px 5px #fff;
+}
+.scene:hover .right{
+	background: skyblue;
+	box-shadow: 0 0 15px 5px #fff;
+	transform: translateX(100px) rotateY(90deg);
+}
+.scene:hover .top{
+	background: #ff6700;
+	box-shadow: 0 0 15px 5px #fff;
+	transform: translateY(-100px) rotateX(90deg);
+}
+.scene:hover .bottom{
+	/* background: rgba(255, 255, 255, 0.4); */
+	box-shadow: 0 0 15px 5px #fff;
+	/*          平移              旋转 */
+	transform: translateY(100px) rotateX(90deg);
+}
+.scene:hover .after{
+   background: green;
+   box-shadow: 0 0 15px 5px #fff;
+   transform: translateZ(-100px);
+}
+.scene:hover .before{
+	background: blue;
+	box-shadow: 0 0 15px 5px #fff;
+	transform: translateZ(100px);
+}
+.scene:hover ul{
+	transform: rotate3d(0, 1, 1, 180deg);
+}

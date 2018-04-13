@@ -1,0 +1,70 @@
+/*
+* @Author: Administrator
+* @Date:   2018-03-15 19:54:49
+* @Last Modified by:   Administrator
+* @Last Modified time: 2018-04-11 20:20:14
+*/
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+boby{
+	background: #357; 
+}
+.scene{
+	width: 500px;
+	height: 500px;
+	perspective: 100px;
+	margin: 100px auto;
+	perspective-origin: left top;
+}
+.scene ul{
+	width: 200px;
+	height: 200px;
+	margin: 150px;
+	position: relative;
+	transform-style: preserve-3d;
+	transition: 2s;
+}
+.scene ul li{
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: 2s;
+}
+.scene:hover .left{
+	background: #789;
+	transform: translateX(-100px) rotateY(90deg); 
+	box-shadow: 0 0 15px 5px #B4E8E3;
+}
+.scene:hover .right{
+	background: #756;
+	transform: translateX(100px) rotateY(90deg); 
+	box-shadow: 0 0 15px 5px #B4E8E3; 	
+}
+.scene:hover .top{
+	background: #548;
+	transform: translateY(-100px) rotateX(90deg); 
+	box-shadow: 0 0 15px 5px #B4E8E3;	
+}
+.scene:hover .bottom{
+	background: #112;
+	transform: translateY(100px) rotateX(90deg); 
+	box-shadow: 0 0 15px 5px #B4E8E3;
+}
+.scene:hover .before{
+	background: #25a;
+	transform: translateZ(-100px);
+	box-shadow: 0 0 15px 5px #B4E8E3;
+}
+.scene:hover .after{
+	background: #59a;
+	transform: translateZ(100px);
+	box-shadow: 0 0 15px 5px #B4E8E3;
+}
+.scene:hover ul{
+	transform: rotate3d(0, 1, 1, 180deg);
+}
